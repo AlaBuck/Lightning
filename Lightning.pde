@@ -1,8 +1,27 @@
+int startX = 0;
+int startY=150;
+
 void setup()
 {
   background(#11161F);
   size(300, 300);
 }
+
+void lightning(){
+  int r=160+(int)(Math.random()*60);
+  int g=251+(int)(Math.random()*60);
+  int b=255+(int)(Math.random()*60);
+  stroke(r,g,b);
+  while(startX<=300){
+    int startNX=startX +(int)(Math.random()*9);
+    int startNY=startY +(int)((Math.random()*18)-9);
+
+    line(startX,startY,startNX,startNY);
+    startX=startNX;
+    startY=startNY;
+  }
+}
+
 void arm()
 {
   int r=184+(int)(Math.random()*40);
@@ -59,7 +78,6 @@ void star(int x, int y)
 }
 void cape()
 {
-  noLoop();
   beginShape();
   int r=184+(int)(Math.random()*40);
   int g=41+(int)(Math.random()*40);
@@ -78,12 +96,18 @@ void cape()
   }
 }
 void draw()
-{
-  cape();
-  face();
-  hat();
-  arm();
+{  
+    
+    lightning();
+    face();
+    hat();
+   cape();
+    arm();
+
 }
 void mousePressed()
 {
+  startX=0;
+  startY=150;
+
 }
