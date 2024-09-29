@@ -1,18 +1,19 @@
-int startX = 0;
-int startY=150;
+int startX = 220;
+int startY=200;
 
 void setup()
 {
   background(#11161F);
-  size(300, 300);
+  size(1000, 300);
 }
 
 void lightning(){
+  strokeWeight(2);
   int r=160+(int)(Math.random()*60);
   int g=251+(int)(Math.random()*60);
   int b=255+(int)(Math.random()*60);
   stroke(r,g,b);
-  while(startX<=300){
+  while(startX<=1000){
     int startNX=startX +(int)(Math.random()*9);
     int startNY=startY +(int)((Math.random()*18)-9);
 
@@ -27,7 +28,7 @@ void arm()
   int r=184+(int)(Math.random()*40);
   int g=41+(int)(Math.random()*40);
   int b=237+(int)(Math.random()*40);
-  fill(r,g,b);
+  fill(r,g,b,100);
   rect(168,240,40,12.5);
   fill(#FFE0C1);
   ellipse(208,244,12.5,12.5);
@@ -46,7 +47,9 @@ void hat()
 void face()
 {
   fill(#FFE0C1);
+  stroke(0,0,0);
   ellipse(145,200,50,50);
+  stroke(0,0,0);
   beginShape();
   curveVertex(150,195);
   curveVertex(150,195);
@@ -59,9 +62,10 @@ void face()
 }
 void star(int x, int y)
 {
-  int r=251+(int)(Math.random()*60);
- int g=255+(int)(Math.random()*60);
- int b=70+(int)(Math.random()*60);
+ strokeWeight(0);
+  int r=251+(int)(Math.random()*240);
+ int g=255+(int)(Math.random()*240);
+ int b=70+(int)(Math.random()*240);
  fill(r,g,b);
   beginShape ();
   vertex(x,y-5);
@@ -107,7 +111,7 @@ void draw()
 }
 void mousePressed()
 {
-  startX=0;
-  startY=150;
+  startX=220;
+  startY=200;
 
 }
